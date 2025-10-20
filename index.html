@@ -1,169 +1,330 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مینا گل سرخی | مشاور و روان‌شناس</title>
-<style>
-body {
-  font-family: "Vazir", sans-serif;
-  background-color: #fafafa;
-  margin: 0;
-  padding: 0;
-  color: #222;
-  overflow-y: scroll;
-}
-header {
-  text-align: center;
-  padding: 40px 10px 10px;
-  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
-}
-header h1 {
-  font-size: 28px;
-  color: #333;
-}
-header p {
-  font-size: 18px;
-  color: #555;
-}
-section {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.slider {
-  position: relative;
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin-bottom: 25px;
-}
-.slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.active {
-  opacity: 1 !important;
-}
-h2 {
-  text-align: center;
-  color: #333;
-  margin-top: 10px;
-}
-p {
-  text-align: justify;
-  line-height: 1.8;
-  font-size: 17px;
-}
-.book {
-  text-align: center;
-}
-.book img {
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-.book-title {
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: 18px;
-}
-.book-desc {
-  font-size: 15px;
-  color: #555;
-}
-a.cta {
-  display: inline-block;
-  margin-top: 8px;
-  text-decoration: none;
-  background-color: #007b8a;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-a.cta:hover {
-  background-color: #005f66;
-}
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  color: #444;
-  direction: ltr;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مینا گل سرخی | مشاور و روان‌شناس</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff; /* A professional blue */
+            --secondary-color: #e6f7ff; /* Light Pastel Blue Background */
+            --text-color: #212529;
+            --header-font: 'Vazirmatn', sans-serif; /* Placeholder for Farsi font */
+        }
+
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+        }
+
+        /* Utility classes for spacing and typography */
+        .container {
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white; /* Content blocks remain white for contrast */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* About Section */
+        #about p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: fit-content; /* Important for horizontal scrolling */
+        }
+
+        .slider-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Image Slider Specifics */
+        #professional-images .slider-item img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Books Slider Specifics */
+        #books .book-slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: fit-content;
+        }
+        
+        #books .book-slider-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #books img {
+            width: 50%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #books h3 {
+            font-size: 1.1em;
+            margin: 5px 0;
+            color: var(--primary-color);
+        }
+
+        #books p {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #books a.btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        #books a.btn:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Contact Section */
+        #contact .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            text-align: right;
+        }
+        
+        #contact .contact-info i {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-left: 15px;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        #contact a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        #contact a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        /* Footer/Copyright */
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.8em;
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
+    
+    <header>
+        <h1>مینا گل سرخی</h1>
+        <p>مشاور و روان‌شناس | کاندیدای دکتری تخصصی روان‌شناسی</p>
+    </header>
 
-<header>
-  <h1>مینا گل سرخی</h1>
-  <p>مشاور و روان‌شناس | دوره دکتری تخصصی روان‌شناسی</p>
-</header>
+    <div class="container">
 
-<section>
-  <div class="slider" id="proSlider">
-    <img src="IMG-20251020-WA0013.jpg" class="active" alt="Mina Golsorkhi Image 1">
-    <img src="IMG-20251020-WA0002.jpg" alt="Mina Golsorkhi Image 2">
-    <img src="IMG-20251020-WA0003.jpg" alt="Mina Golsorkhi Image 3">
-    <img src="IMG-20251020-WA0005.jpg" alt="Mina Golsorkhi Image 4">
-  </div>
+        <section id="about">
+            <h2>درباره من</h2>
+            <p>
+                به دنیای درونی خود خوش آمدید. من مینا گل سرخی، مشاور و روان‌شناس هستم و در حال آموختن و پژوهش هستم.
+                از سال ۱۳۸۸ به عنوان روان‌درمانگر فعالیت داشته‌ام. فعالیت اصلی من درمان اضطراب، افسردگی، و وسواس (OCD) در نوجوانان، بزرگسالان و کودکان است.
+            </p>
+            <p>
+                عضو انجمن‌های روان‌شناسی ایران و آمریکا هستم و با رویکردی تلفیقی، علمی و همراه با شفقت، در مسیر خودشناسی و حل مسائل کنار شما خواهم بود.
+            </p>
+        </section>
+        
+        <section id="professional-images">
+            <h2>تصاویر حرفه‌ای</h2>
+            <div class="slider-container" id="image-slider">
+                <div class="slider-wrapper">
+                    <!-- Images loaded from your repository root -->
+                    <div class="slider-item">
+                        <img src="IMG-20251020-WA0013.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
+                    </div>
+                    <div class="slider-item">
+                        <img src="IMG-20251020-WA0002.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
+                    </div>
+                    <div class="slider-item">
+                        <img src="IMG-20251020-WA0003.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <h2>درباره من</h2>
-  <p>
-    من <strong>مینا گل‌سرخی</strong> هستم، مشاور و روان‌شناسی که باور دارم آرامش، مهارتی آموختنی‌ست.
-    در کنار فعالیت حرفه‌ای به عنوان مشاور در حوزه‌ی اضطراب، افسردگی و تمرکز،
-    مسیر دکتری تخصصی روان‌شناسی را می‌گذرانم و همواره در حال آموختن و پژوهش هستم.
-    به عنوان نویسنده و مترجم کتاب‌های روان‌شناسی کاربردی، تلاش می‌کنم ابزارهایی واقعی و قابل‌استفاده برای رشد ذهن و بهبود کیفیت زندگی ارائه دهم.
-    در جلسات مشاوره‌ام، تمرکز اصلی بر شناخت دقیق هیجانات، بازیابی تعادل درونی و افزایش خودآگاهی است — زیرا باور دارم هر تغییر پایداری از درون آغاز می‌شود.
-  </p>
+        <section id="books">
+            <h2>کتاب‌های من</h2>
+            <div class="slider-container" id="book-slider">
+                <div class="book-slider-wrapper">
+                    
+                    <div class="book-slider-item">
+                        <img src="IMG-20251020-WA0012.jpg" alt="جلد کتاب آرامش در طوفان">
+                        <h3>آرامش در طوفان</h3>
+                        <p>تکنیک‌های کاربردی برای غلبه بر اضطراب</p>
+                        <a class="btn" href="https://hoorin.org/product-brands/مينا-گل-سرخي/" target="_blank">لینک خرید</a>
+                    </div>
+                    
+                    <div class="book-slider-item">
+                        <img src="IMG-20251020-WA0011.jpg" alt="جلد کتاب تفکر نقاد">
+                        <h3>تفکر نقاد</h3>
+                        <p>روش‌هایی برای تصمیم‌گیری و حل مسئله بهتر</p>
+                        <!-- در صورت وجود لینک خرید، دکمه را فعال کنید -->
+                        <!-- <a class="btn" href="#">لینک خرید</a> -->
+                    </div>
 
-  <h2>کتاب‌های من</h2>
+                </div>
+            </div>
+        </section>
 
-  <div class="slider" id="bookSlider">
-    <div class="book active">
-      <img src="IMG-20251020-WA0012.jpg" alt="کتاب آرامش در طوفان">
-      <div class="book-title">آرامش در طوفان</div>
-      <div class="book-desc">تکنیک‌های کاربردی برای غلبه بر اضطراب</div>
-      <a class="cta" href="https://hoorin.org/product-brands/%d9%85%d9%8a%d9%86%d8%a7-%da%af%d9%84-%d8%b3%d8%b1%d8%ae%d9%8a/" target="_blank">خرید از سایت حورین</a>
+        <section id="contact">
+            <h2>تماس با من</h2>
+            <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>آدرس کلینیک آراما: تهران، حوالی میدان ونک</span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone-alt"></i>
+                <span>تلفن تماس کلینیک: <a href="tel:+989206368713">۰۹۲۰۶۳۶۸۷۱۳</a></span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-mobile-alt"></i>
+                <span>شماره مستقیم (مشاوره): <a href="tel:+989374405490">۰۹۳۷۴۴۰۵۴۹۰</a></span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <span>ایمیل: <a href="mailto:minagolsorkhi05@gmail.com">minagolsorkhi05@gmail.com</a></span>
+            </div>
+            <div class="contact-info">
+                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/mina_golsorkhi.psy" target="_blank">صفحه اینستاگرام (mina_golsorkhi.psy)</a>
+            </div>
+        </section>
+
     </div>
 
-    <div class="book">
-      <img src="IMG-20251020-WA0011.jpg" alt="کتاب تفکر نقاد">
-      <div class="book-title">تفکر نقاد</div>
-      <div class="book-desc">روش‌هایی برای تصمیم‌گیری و حل مسئله بهتر</div>
-    </div>
-  </div>
-</section>
+    <footer>
+        <p>&copy; ۲۰۲۴ مینا گل سرخی | مشاور و روان‌شناس</p>
+    </footer>
 
-<footer>
-  تماس: minagolsorkhi05@gmail.com | WhatsApp: 09206368713
-</footer>
+    <script>
+        // JavaScript for Auto-Sliding Functionality
+        
+        function setupSlider(sliderId, itemClass) {
+            const slider = document.getElementById(sliderId);
+            const wrapper = slider.querySelector(`.${itemClass}-wrapper`);
+            const items = slider.querySelectorAll(`.${itemClass}-item`);
+            let currentIndex = 0;
+            const totalItems = items.length;
 
-<script>
-let proIndex = 0;
-let proSlides = document.querySelectorAll("#proSlider img");
-setInterval(() => {
-  proSlides[proIndex].classList.remove("active");
-  proIndex = (proIndex + 1) % proSlides.length;
-  proSlides[proIndex].classList.add("active");
-}, 3500);
+            if (totalItems <= 1) return; // No need to slide if 0 or 1 item
 
-let bookIndex = 0;
-let bookSlides = document.querySelectorAll("#bookSlider .book");
-setInterval(() => {
-  bookSlides[bookIndex].classList.remove("active");
-  bookIndex = (bookIndex + 1) % bookSlides.length;
-  bookSlides[bookIndex].classList.add("active");
-}, 4200);
-</script>
+            function slideToNext() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                const offset = -currentIndex * 100; // 100% of the container width
+                wrapper.style.transform = `translateX(${offset}%)`;
+            }
 
+            // Start the auto-slide every 4 seconds
+            setInterval(slideToNext, 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup Professional Image Slider
+            setupSlider('image-slider', 'slider'); 
+
+            // Setup Book Slider
+            setupSlider('book-slider', 'book-slider'); 
+        });
+
+    </script>
 </body>
 </html>
