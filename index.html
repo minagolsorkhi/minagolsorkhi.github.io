@@ -1,253 +1,193 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مینا گل‌سرخی | روان‌شناس و نویسنده</title>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<style>
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'Vazirmatn', sans-serif;
-  background: linear-gradient(120deg, #e6f7ff, #ccf2ff, #e6f7ff);
-  background-size: 300% 300%;
-  animation: bgMove 20s ease-in-out infinite alternate;
-  overflow-x: hidden;
-}
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مینا گل‌سرخی</title>
 
-/* Navbar */
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+<style>
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(180deg,#e6f7ff,#f9fcff);
+  margin: 0;
+  scroll-behavior: smooth;
+  animation: fadeSlide 1s ease both;
+}
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+header {
+  height: 200px;
+  background: url('header.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #004466;
+  text-shadow: 0 0 6px #fff;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 2rem;
+}
 nav {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.92);
+  background-color: rgba(255,255,255,0.8);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
   padding: 10px 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 nav a {
-  color: #006e99;
   text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-nav a:hover { color: #0099d6; }
-
-/* Header */
-header {
-  position: relative;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  background: url('IMG-20251020-WA0011.jpg') center/cover no-repeat;
-  filter: brightness(0.75);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeIn 1.5s ease forwards;
-}
-header h1 {
-  font-family: 'Noto Naskh Arabic', serif;
-  font-size: 28px;
-  background: rgba(0,0,0,0.35);
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-/* Section Titles */
-section h2 {
   color: #0099d6;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover { color: #005b80; }
+
+.section {
   text-align: center;
-  border-right: 4px solid #0099d6;
-  display: inline-block;
-  padding-right: 10px;
+  padding: 30px 0;
 }
 
-/* Slider base */
-.slider-container {
-  max-width: 550px;
-  margin: 30px auto;
-  position: relative;
+.slider {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: grab;
 }
-.slider {
+.slide-track {
   display: flex;
   transition: transform 0.6s ease;
 }
-.slider img {
+.slide {
+  min-width: 100%;
+}
+.slide img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* About & Contact */
-section {
-  max-width: 550px;
-  margin: 30px auto;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  color: #003344;
-  line-height: 1.7;
-}
-footer {
-  text-align: center;
-  background-color: #0099d6;
-  color: white;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 14px;
+  user-select: none;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+.dots {
+  text-align: center;
+  margin-top: 8px;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+.dot.active {
+  background-color: #0099d6;
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: #0099d6;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
 </style>
 </head>
 <body>
 
+<header>مینا گل‌سرخی</header>
+
 <nav>
-  <a href="#top">خانه</a>
-  <a href="#about">درباره من</a>
-  <a href="#clinic">کلینیک آرما</a>
-  <a href="#contact">تماس</a>
+  <a href="#self">خودم</a>
+  <a href="#clinic">کلینیک</a>
+  <a href="#books">کتاب‌ها</a>
 </nav>
 
-<header id="top">
-  <h1>مینا گل‌سرخی – روان‌شناس، مشاور و نویسنده</h1>
-</header>
-
-<!-- Personal Section -->
-<section id="myself">
+<section id="self" class="section">
   <h2>خودم</h2>
-  <div class="slider-container">
-    <div class="slider">
-      <img src="IMG-20251020-WA0007.jpg">
-      <img src="IMG-20251020-WA0009.jpg">
-      <img src="IMG-20251020-WA0011.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۰۶۵۵_Acode.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۰۸۲۶_Acode.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۰۰۰۱_Acode.jpg">
+  <div class="slider" id="slider1">
+    <div class="slide-track">
+      <div class="slide"><img src="IMG-20251020-WA0002.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0003.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0005.jpg" alt=""></div>
     </div>
-    <button class="nav-btn prev">❮</button>
-    <button class="nav-btn next">❯</button>
   </div>
+  <div class="dots"></div>
 </section>
 
-<!-- Books Section -->
-<section id="books">
+<section id="clinic" class="section">
+  <h2>کلینیک</h2>
+  <div class="slider" id="slider2">
+    <div class="slide-track">
+      <div class="slide"><img src="IMG-20251020-WA0006.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0007.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0012.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="dots"></div>
+</section>
+
+<section id="books" class="section">
   <h2>کتاب‌ها</h2>
-  <div class="slider-container">
-    <div class="slider">
-      <img src="IMG-20251020-WA0005.jpg">
-      <img src="IMG-20251020-WA0006.jpg">
-      <img src="IMG-20251020-WA0013.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۲۸۱۸_Samsung Internet.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۳۸۵۲_Samsung Internet.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۱۰۴۲۵۱_Samsung Internet.jpg">
+  <div class="slider" id="slider3">
+    <div class="slide-track">
+      <div class="slide"><img src="IMG-20251020-WA0013.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0011.jpg" alt=""></div>
+      <div class="slide"><img src="IMG-20251020-WA0009.jpg" alt=""></div>
     </div>
-    <button class="nav-btn prev">❮</button>
-    <button class="nav-btn next">❯</button>
   </div>
+  <div class="dots"></div>
 </section>
 
-<!-- Clinic Section -->
-<section id="clinic">
-  <h2>کلینیک آرما</h2>
-  <div class="slider-container">
-    <div class="slider">
-      <img src="IMG-20251020-WA0002.jpg">
-      <img src="IMG-20251020-WA0003.jpg">
-      <img src="IMG-20251020-WA0012.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۷۵۴۲۷_Samsung Internet.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۳۹۴۳_Samsung Internet.jpg">
-      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۴۰۵۰_Samsung Internet.jpg">
-    </div>
-    <button class="nav-btn prev">❮</button>
-    <button class="nav-btn next">❯</button>
-  </div>
-</section>
-
-<section id="about">
-  <h3>درباره من</h3>
-  <p>کاندیدای دکتری روان‌شناسی، عضو انجمن روان‌شناسی ایران و آمریکا، متخصص درمان اضطراب، افسردگی، وسواس و اختلالات تمرکز.  
-  نویسنده و مترجم کتب روان‌شناسی.</p>
-</section>
-
-<section id="contact">
-  <h3>تماس با من</h3>
-  <p>ایمیل: <b>minagolsorkhi05@gmail.com</b><br>
-  واتساپ: <b>09206368713</b><br>
-  کلینیک آرما، خیابان سنایی، تهران</p>
-</section>
-
-<footer>© 2025 Mina Golsorkhi | minagolsorkhi.github.io</footer>
+<footer>© 2025 مینا گل‌سرخی - کل حقوق محفوظ است.</footer>
 
 <script>
-function initSliders(){
-  const sliders = document.querySelectorAll(".slider-container");
-  sliders.forEach(container=>{
-    const slider = container.querySelector(".slider");
-    const images = slider.querySelectorAll("img");
-    let currentIndex = 0;
-    const prevBtn = container.querySelector(".prev");
-    const nextBtn = container.querySelector(".next");
+// تابع اسلایدر لمسی با نقطه‌ها
+function makeSwipeSlider(sliderId) {
+  const slider = document.getElementById(sliderId);
+  const track = slider.querySelector('.slide-track');
+  const slides = track.children;
+  const dotsContainer = slider.parentElement.querySelector('.dots');
+  const total = slides.length;
+  let index = 0;
 
-    function showSlide(index){
-      if(index < 0) index = images.length - 1;
-      if(index >= images.length) index = 0;
-      slider.style.transform = "translateX(" + (-index * 100) + "%)";
-      currentIndex = index;
-    }
+  // ساخت نقطه‌ها
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('.dot');
 
-    // Manual Buttons
-    prevBtn.addEventListener("click", ()=> showSlide(currentIndex - 1));
-    nextBtn.addEventListener("click", ()=> showSlide(currentIndex + 1));
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
 
-    // Auto Slide
-    setInterval(()=> showSlide(currentIndex + 1), 5000);
+  function showSlide(i) {
+    if (i < 0) i = total - 1;
+    if (i >= total) i = 0;
+    index = i;
+    track.style.transform = `translateX(${-i * 100}%)`;
+    updateDots();
+  }
 
-    // Swipe
-    const hammer = new Hammer(container);
-    hammer.on("swipeleft", ()=> showSlide(currentIndex + 1));
-    hammer.on("swiperight", ()=> showSlide(currentIndex - 1));
-  });
+  const hammer = new Hammer(slider);
+  hammer.on('swipeleft', () => showSlide(index + 1));
+  hammer.on('swiperight', () => showSlide(index - 1));
 }
-document.addEventListener("DOMContentLoaded", initSliders);
-</script>
 
-</body>
-</html>
+['slider1', 'slider2', 'slider3
