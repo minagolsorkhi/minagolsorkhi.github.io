@@ -1,102 +1,169 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دکتر مینا گل سرخی | روان‌شناس بالینی</title>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<title>مینا گل سرخی | مشاور و روان‌شناس</title>
 <style>
 body {
-  font-family: "Vazirmatn", sans-serif;
-  background-color: #f7f9fa;
-  color: #333;
+  font-family: "Vazir", sans-serif;
+  background-color: #fafafa;
   margin: 0;
-  line-height: 1.6;
+  padding: 0;
+  color: #222;
+  overflow-y: scroll;
 }
 header {
-  background: linear-gradient(135deg, #a3c4dc, #e6eff4);
   text-align: center;
-  padding: 30px 10px;
-  border-bottom: 3px solid #c2d9e7;
+  padding: 40px 10px 10px;
+  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
 }
-h1 {
-  margin-bottom: 5px;
+header h1 {
+  font-size: 28px;
+  color: #333;
 }
-.section {
-  padding: 25px;
-  max-width: 600px;
-  margin: auto;
+header p {
+  font-size: 18px;
+  color: #555;
 }
-.profile img {
-  width: 48%;
-  border-radius: 10px;
-  margin: 1%;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-}
-.gallery img {
-  width: 48%;
-  border-radius: 10px;
-  margin: 1%;
-  transition: transform 0.3s;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-.contact {
-  background-color: #e6eff4;
+section {
   padding: 20px;
-  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 25px;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.active {
+  opacity: 1 !important;
+}
+h2 {
   text-align: center;
-  margin-top: 20px;
+  color: #333;
+  margin-top: 10px;
+}
+p {
+  text-align: justify;
   line-height: 1.8;
+  font-size: 17px;
+}
+.book {
+  text-align: center;
+}
+.book img {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.book-title {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.book-desc {
+  font-size: 15px;
+  color: #555;
+}
+a.cta {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  background-color: #007b8a;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+a.cta:hover {
+  background-color: #005f66;
 }
 footer {
+  background-color: #eee;
   text-align: center;
   padding: 15px;
   font-size: 14px;
-  background-color: #f1f3f5;
-  color: #555;
-  margin-top: 20px;
+  color: #444;
+  direction: ltr;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>دکتر مینا گل سرخی</h1>
-  <h3>روان‌شناس بالینی | عضو انجمن روان‌شناسی ایران و آمریکا</h3>
+  <h1>مینا گل سرخی</h1>
+  <p>مشاور و روان‌شناس | دوره دکتری تخصصی روان‌شناسی</p>
 </header>
 
-<div class="section profile">
+<section>
+  <div class="slider" id="proSlider">
+    <img src="IMG-20251020-WA0013.jpg" class="active" alt="Mina Golsorkhi Image 1">
+    <img src="IMG-20251020-WA0002.jpg" alt="Mina Golsorkhi Image 2">
+    <img src="IMG-20251020-WA0003.jpg" alt="Mina Golsorkhi Image 3">
+    <img src="IMG-20251020-WA0005.jpg" alt="Mina Golsorkhi Image 4">
+  </div>
+
   <h2>درباره من</h2>
-  <p>دکتر مینا گل سرخی، دکتری تخصصی روان‌شناسی و عضو انجمن روان‌شناسی ایران و آمریکا، مشاور و روان‌شناس فردی، کودک و نوجوان است. همچنین نویسنده و مترجم کتاب‌های روان‌شناسی می‌باشند.</p>
-  <div>
-    <img src="IMG-20251020-WA0002.jpg" alt="Dr. Mina Gol Sorkhi Photo 1">
-    <img src="IMG-20251020-WA0003.jpg" alt="Dr. Mina Gol Sorkhi Photo 2">
-  </div>
-</div>
+  <p>
+    من <strong>مینا گل‌سرخی</strong> هستم، مشاور و روان‌شناسی که باور دارم آرامش، مهارتی آموختنی‌ست.
+    در کنار فعالیت حرفه‌ای به عنوان مشاور در حوزه‌ی اضطراب، افسردگی و تمرکز،
+    مسیر دکتری تخصصی روان‌شناسی را می‌گذرانم و همواره در حال آموختن و پژوهش هستم.
+    به عنوان نویسنده و مترجم کتاب‌های روان‌شناسی کاربردی، تلاش می‌کنم ابزارهایی واقعی و قابل‌استفاده برای رشد ذهن و بهبود کیفیت زندگی ارائه دهم.
+    در جلسات مشاوره‌ام، تمرکز اصلی بر شناخت دقیق هیجانات، بازیابی تعادل درونی و افزایش خودآگاهی است — زیرا باور دارم هر تغییر پایداری از درون آغاز می‌شود.
+  </p>
 
-<div class="section gallery">
-  <h2>گالری کلینیک آراما</h2>
-  <div>
-    <img src="IMG-20251020-WA0005.jpg" alt="Arama Clinic Photo 1">
-    <img src="IMG-20251020-WA0006.jpg" alt="Arama Clinic Photo 2">
-    <img src="IMG-20251020-WA0007.jpg" alt="Arama Clinic Photo 3">
-    <img src="IMG-20251020-WA0009.jpg" alt="Arama Clinic Photo 4">
-  </div>
-</div>
+  <h2>کتاب‌های من</h2>
 
-<div class="section contact">
-  <h2>تماس با من</h2>
-  <p>📍 تهران، نرسیده به میدان ونک، خیابان ولیعصر، روبه‌روی گاندی دهم، ساختمان ۷۹۰، طبقه پنجم، واحد ۲۰، کلینیک آراما</p>
-  <p>☎️ ۰۹۳۷۴۴۰۵۴۹۰ | 📱 واتساپ: ۰۹۲۰۶۳۶۸۷۱۳</p>
-  <p>📧 minagolsorkhi05@gmail.com</p>
-</div>
+  <div class="slider" id="bookSlider">
+    <div class="book active">
+      <img src="IMG-20251020-WA0012.jpg" alt="کتاب آرامش در طوفان">
+      <div class="book-title">آرامش در طوفان</div>
+      <div class="book-desc">تکنیک‌های کاربردی برای غلبه بر اضطراب</div>
+      <a class="cta" href="https://hoorin.org/product-brands/%d9%85%d9%8a%d9%86%d8%a7-%da%af%d9%84-%d8%b3%d8%b1%d8%ae%d9%8a/" target="_blank">خرید از سایت حورین</a>
+    </div>
+
+    <div class="book">
+      <img src="IMG-20251020-WA0011.jpg" alt="کتاب تفکر نقاد">
+      <div class="book-title">تفکر نقاد</div>
+      <div class="book-desc">روش‌هایی برای تصمیم‌گیری و حل مسئله بهتر</div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  © 2025 Dr. Mina Gol Sorkhi – All Rights Reserved
+  تماس: minagolsorkhi05@gmail.com | WhatsApp: 09206368713
 </footer>
+
+<script>
+let proIndex = 0;
+let proSlides = document.querySelectorAll("#proSlider img");
+setInterval(() => {
+  proSlides[proIndex].classList.remove("active");
+  proIndex = (proIndex + 1) % proSlides.length;
+  proSlides[proIndex].classList.add("active");
+}, 3500);
+
+let bookIndex = 0;
+let bookSlides = document.querySelectorAll("#bookSlider .book");
+setInterval(() => {
+  bookSlides[bookIndex].classList.remove("active");
+  bookIndex = (bookIndex + 1) % bookSlides.length;
+  bookSlides[bookIndex].classList.add("active");
+}, 4200);
+</script>
 
 </body>
 </html>
