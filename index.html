@@ -1,330 +1,253 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مینا گل سرخی | مشاور و روان‌شناس</title>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #007bff; /* A professional blue */
-            --secondary-color: #e6f7ff; /* Light Pastel Blue Background */
-            --text-color: #212529;
-            --header-font: 'Vazirmatn', sans-serif; /* Placeholder for Farsi font */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مینا گل‌سرخی | روان‌شناس و نویسنده</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<style>
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(120deg, #e6f7ff, #ccf2ff, #e6f7ff);
+  background-size: 300% 300%;
+  animation: bgMove 20s ease-in-out infinite alternate;
+  overflow-x: hidden;
+}
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
 
-        @font-face {
-            font-family: 'Vazirmatn';
-            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-style: normal;
-        }
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+nav a {
+  color: #006e99;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav a:hover { color: #0099d6; }
 
-        body {
-            font-family: 'Vazirmatn', Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            border-left: 1px solid #eee;
-            border-right: 1px solid #eee;
-        }
+/* Header */
+header {
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background: url('IMG-20251020-WA0011.jpg') center/cover no-repeat;
+  filter: brightness(0.75);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s ease forwards;
+}
+header h1 {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 28px;
+  background: rgba(0,0,0,0.35);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
 
-        /* Utility classes for spacing and typography */
-        .container {
-            padding: 20px;
-        }
+/* Section Titles */
+section h2 {
+  color: #0099d6;
+  text-align: center;
+  border-right: 4px solid #0099d6;
+  display: inline-block;
+  padding-right: 10px;
+}
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+/* Slider base */
+.slider-container {
+  max-width: 550px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  background: #fff;
+}
+.slider {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+.slider img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
 
-        header h1 {
-            margin: 0 0 5px 0;
-            font-size: 1.8em;
-        }
+/* About & Contact */
+section {
+  max-width: 550px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: #003344;
+  line-height: 1.7;
+}
+footer {
+  text-align: center;
+  background-color: #0099d6;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
 
-        header p {
-            margin: 0;
-            font-size: 1em;
-            opacity: 0.9;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: white; /* Content blocks remain white for contrast */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        section h2 {
-            font-size: 1.5em;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* About Section */
-        #about p {
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        /* Slider Styles */
-        .slider-container {
-            overflow: hidden;
-            width: 100%;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: fit-content; /* Important for horizontal scrolling */
-        }
-
-        .slider-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Image Slider Specifics */
-        #professional-images .slider-item img {
-            width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Books Slider Specifics */
-        #books .book-slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: fit-content;
-        }
-        
-        #books .book-slider-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        #books img {
-            width: 50%;
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        #books h3 {
-            font-size: 1.1em;
-            margin: 5px 0;
-            color: var(--primary-color);
-        }
-
-        #books p {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        #books a.btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9em;
-            transition: background-color 0.3s;
-        }
-
-        #books a.btn:hover {
-            background-color: #0056b3;
-        }
-        
-        /* Contact Section */
-        #contact .contact-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            text-align: right;
-        }
-        
-        #contact .contact-info i {
-            font-size: 1.2em;
-            color: var(--primary-color);
-            margin-left: 15px;
-            min-width: 20px;
-            text-align: center;
-        }
-        
-        #contact a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        
-        #contact a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-        
-        /* Footer/Copyright */
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.8em;
-            color: #6c757d;
-        }
-    </style>
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 <body>
-    
-    <header>
-        <h1>مینا گل سرخی</h1>
-        <p>مشاور و روان‌شناس | کاندیدای دکتری تخصصی روان‌شناسی</p>
-    </header>
 
-    <div class="container">
+<nav>
+  <a href="#top">خانه</a>
+  <a href="#about">درباره من</a>
+  <a href="#clinic">کلینیک آرما</a>
+  <a href="#contact">تماس</a>
+</nav>
 
-        <section id="about">
-            <h2>درباره من</h2>
-            <p>
-                به دنیای درونی خود خوش آمدید. من مینا گل سرخی، مشاور و روان‌شناس هستم و در حال آموختن و پژوهش هستم.
-                از سال ۱۳۸۸ به عنوان روان‌درمانگر فعالیت داشته‌ام. فعالیت اصلی من درمان اضطراب، افسردگی، و وسواس (OCD) در نوجوانان، بزرگسالان و کودکان است.
-            </p>
-            <p>
-                عضو انجمن‌های روان‌شناسی ایران و آمریکا هستم و با رویکردی تلفیقی، علمی و همراه با شفقت، در مسیر خودشناسی و حل مسائل کنار شما خواهم بود.
-            </p>
-        </section>
-        
-        <section id="professional-images">
-            <h2>تصاویر حرفه‌ای</h2>
-            <div class="slider-container" id="image-slider">
-                <div class="slider-wrapper">
-                    <!-- Images loaded from your repository root -->
-                    <div class="slider-item">
-                        <img src="IMG-20251020-WA0013.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
-                    </div>
-                    <div class="slider-item">
-                        <img src="IMG-20251020-WA0002.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
-                    </div>
-                    <div class="slider-item">
-                        <img src="IMG-20251020-WA0003.jpg" alt="تصویر حرفه‌ای مینا گل سرخی">
-                    </div>
-                </div>
-            </div>
-        </section>
+<header id="top">
+  <h1>مینا گل‌سرخی – روان‌شناس، مشاور و نویسنده</h1>
+</header>
 
-        <section id="books">
-            <h2>کتاب‌های من</h2>
-            <div class="slider-container" id="book-slider">
-                <div class="book-slider-wrapper">
-                    
-                    <div class="book-slider-item">
-                        <img src="IMG-20251020-WA0012.jpg" alt="جلد کتاب آرامش در طوفان">
-                        <h3>آرامش در طوفان</h3>
-                        <p>تکنیک‌های کاربردی برای غلبه بر اضطراب</p>
-                        <a class="btn" href="https://hoorin.org/product-brands/مينا-گل-سرخي/" target="_blank">لینک خرید</a>
-                    </div>
-                    
-                    <div class="book-slider-item">
-                        <img src="IMG-20251020-WA0011.jpg" alt="جلد کتاب تفکر نقاد">
-                        <h3>تفکر نقاد</h3>
-                        <p>روش‌هایی برای تصمیم‌گیری و حل مسئله بهتر</p>
-                        <!-- در صورت وجود لینک خرید، دکمه را فعال کنید -->
-                        <!-- <a class="btn" href="#">لینک خرید</a> -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>تماس با من</h2>
-            <div class="contact-info">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>آدرس کلینیک آراما: تهران، حوالی میدان ونک</span>
-            </div>
-            <div class="contact-info">
-                <i class="fas fa-phone-alt"></i>
-                <span>تلفن تماس کلینیک: <a href="tel:+989206368713">۰۹۲۰۶۳۶۸۷۱۳</a></span>
-            </div>
-            <div class="contact-info">
-                <i class="fas fa-mobile-alt"></i>
-                <span>شماره مستقیم (مشاوره): <a href="tel:+989374405490">۰۹۳۷۴۴۰۵۴۹۰</a></span>
-            </div>
-            <div class="contact-info">
-                <i class="fas fa-envelope"></i>
-                <span>ایمیل: <a href="mailto:minagolsorkhi05@gmail.com">minagolsorkhi05@gmail.com</a></span>
-            </div>
-            <div class="contact-info">
-                <i class="fab fa-instagram"></i>
-                <a href="https://instagram.com/mina_golsorkhi.psy" target="_blank">صفحه اینستاگرام (mina_golsorkhi.psy)</a>
-            </div>
-        </section>
-
+<!-- Personal Section -->
+<section id="myself">
+  <h2>خودم</h2>
+  <div class="slider-container">
+    <div class="slider">
+      <img src="IMG-20251020-WA0007.jpg">
+      <img src="IMG-20251020-WA0009.jpg">
+      <img src="IMG-20251020-WA0011.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۰۶۵۵_Acode.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۰۸۲۶_Acode.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۰۰۰۱_Acode.jpg">
     </div>
+    <button class="nav-btn prev">❮</button>
+    <button class="nav-btn next">❯</button>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; ۲۰۲۴ مینا گل سرخی | مشاور و روان‌شناس</p>
-    </footer>
+<!-- Books Section -->
+<section id="books">
+  <h2>کتاب‌ها</h2>
+  <div class="slider-container">
+    <div class="slider">
+      <img src="IMG-20251020-WA0005.jpg">
+      <img src="IMG-20251020-WA0006.jpg">
+      <img src="IMG-20251020-WA0013.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۲۸۱۸_Samsung Internet.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۱۳۸۵۲_Samsung Internet.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۱۰۴۲۵۱_Samsung Internet.jpg">
+    </div>
+    <button class="nav-btn prev">❮</button>
+    <button class="nav-btn next">❯</button>
+  </div>
+</section>
 
-    <script>
-        // JavaScript for Auto-Sliding Functionality
-        
-        function setupSlider(sliderId, itemClass) {
-            const slider = document.getElementById(sliderId);
-            const wrapper = slider.querySelector(`.${itemClass}-wrapper`);
-            const items = slider.querySelectorAll(`.${itemClass}-item`);
-            let currentIndex = 0;
-            const totalItems = items.length;
+<!-- Clinic Section -->
+<section id="clinic">
+  <h2>کلینیک آرما</h2>
+  <div class="slider-container">
+    <div class="slider">
+      <img src="IMG-20251020-WA0002.jpg">
+      <img src="IMG-20251020-WA0003.jpg">
+      <img src="IMG-20251020-WA0012.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۷۵۴۲۷_Samsung Internet.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۳۹۴۳_Samsung Internet.jpg">
+      <img src="Screenshot_۲۰۲۵۱۰۲۰_۰۹۴۰۵۰_Samsung Internet.jpg">
+    </div>
+    <button class="nav-btn prev">❮</button>
+    <button class="nav-btn next">❯</button>
+  </div>
+</section>
 
-            if (totalItems <= 1) return; // No need to slide if 0 or 1 item
+<section id="about">
+  <h3>درباره من</h3>
+  <p>کاندیدای دکتری روان‌شناسی، عضو انجمن روان‌شناسی ایران و آمریکا، متخصص درمان اضطراب، افسردگی، وسواس و اختلالات تمرکز.  
+  نویسنده و مترجم کتب روان‌شناسی.</p>
+</section>
 
-            function slideToNext() {
-                currentIndex = (currentIndex + 1) % totalItems;
-                const offset = -currentIndex * 100; // 100% of the container width
-                wrapper.style.transform = `translateX(${offset}%)`;
-            }
+<section id="contact">
+  <h3>تماس با من</h3>
+  <p>ایمیل: <b>minagolsorkhi05@gmail.com</b><br>
+  واتساپ: <b>09206368713</b><br>
+  کلینیک آرما، خیابان سنایی، تهران</p>
+</section>
 
-            // Start the auto-slide every 4 seconds
-            setInterval(slideToNext, 4000);
-        }
+<footer>© 2025 Mina Golsorkhi | minagolsorkhi.github.io</footer>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Setup Professional Image Slider
-            setupSlider('image-slider', 'slider'); 
+<script>
+function initSliders(){
+  const sliders = document.querySelectorAll(".slider-container");
+  sliders.forEach(container=>{
+    const slider = container.querySelector(".slider");
+    const images = slider.querySelectorAll("img");
+    let currentIndex = 0;
+    const prevBtn = container.querySelector(".prev");
+    const nextBtn = container.querySelector(".next");
 
-            // Setup Book Slider
-            setupSlider('book-slider', 'book-slider'); 
-        });
+    function showSlide(index){
+      if(index < 0) index = images.length - 1;
+      if(index >= images.length) index = 0;
+      slider.style.transform = "translateX(" + (-index * 100) + "%)";
+      currentIndex = index;
+    }
 
-    </script>
+    // Manual Buttons
+    prevBtn.addEventListener("click", ()=> showSlide(currentIndex - 1));
+    nextBtn.addEventListener("click", ()=> showSlide(currentIndex + 1));
+
+    // Auto Slide
+    setInterval(()=> showSlide(currentIndex + 1), 5000);
+
+    // Swipe
+    const hammer = new Hammer(container);
+    hammer.on("swipeleft", ()=> showSlide(currentIndex + 1));
+    hammer.on("swiperight", ()=> showSlide(currentIndex - 1));
+  });
+}
+document.addEventListener("DOMContentLoaded", initSliders);
+</script>
+
 </body>
 </html>
