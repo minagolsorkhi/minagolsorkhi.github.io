@@ -1,71 +1,107 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مینا گل‌سرخی | روان‌شناس</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>کلینیک روان‌شناسی آراما</title>
 <style>
-body{font-family:'Vazirmatn',sans-serif;background:#e6f7ff;margin:0;line-height:1.8;color:#333}
-header{background:white;box-shadow:0 2px 6px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center;padding:10px 5%}
-.logo-container{display:flex;align-items:center;color:#3f51b5;font-weight:700}
-.logo-img{width:40px;height:40px;border-radius:50%;margin-left:10px;object-fit:cover}
-nav a{color:#333;text-decoration:none;margin-right:15px}
-section{background:white;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);margin:20px 5%;padding:30px}
-h2{text-align:center;color:#3f51b5;margin-bottom:25px}
-.contact-item{display:flex;align-items:center;justify-content:center;background:#e6f7ff;padding:10px;border-radius:5px;text-decoration:none;color:#333;margin:8px 0}
-.contact-item i{margin-left:10px;color:#3f51b5}
-.fixed-call-btn{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f51b5;color:white;padding:10px 25px;border-radius:25px;text-decoration:none}
-footer{text-align:center;padding:15px;background:white;color:#666;font-size:0.9rem;margin-top:20px}
-.map-container{width:100%;height:300px;border-radius:8px;overflow:hidden}
-.map-container iframe{width:100%;height:100%;border:0}
+body {
+  font-family: "Vazirmatn", sans-serif;
+  background-color: #fdfefe;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  overflow-y: scroll;
+}
+header {
+  background-color: #00acc1;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+#slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+#slider img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.section {
+  padding: 1.5rem;
+  text-align: center;
+}
+footer {
+  background: #e0f7fa;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.contact {
+  background: #b2ebf2;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact b {
+  color: #00796b;
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="https://via.placeholder.com/40/6378f4/fff?text=MG" class="logo-img" alt="Mina Golsorkhi">
-    مینا گل‌سرخی
-  </div>
-  <nav>
-    <a href="#about">درباره من</a>
-    <a href="#clinic">کلینیک</a>
-    <a href="#books">کتاب‌ها</a>
-    <a href="#contact">تماس</a>
-  </nav>
+  <h1>کلینیک روان‌شناسی آراما</h1>
 </header>
 
-<main>
-<section id="clinic">
-  <h2>کلینیک روان‌شناسی آرما</h2>
-  <div class="content-box">
-    <h3>اطلاعات تماس و آدرس کلینیک آرما</h3>
-    <p>تمامی جلسات مشاوره و درمانی با هماهنگی قبلی در کلینیک آرما برگزار می‌شود.</p>
-    <p class="clinic-address">
-      <i class="fas fa-map-marker-alt"></i> آدرس: نرسیده به میدان ونک، خیابان ولیعصر، روبه‌روی دهم گاندی، ساختمان ۷۹۰، واحد ۲۰
-    </p>
-    <div class="contact-info">
-      <a href="tel:09374405490" class="contact-item"><i class="fas fa-phone"></i> تماس: ۰۹۳۷۴۴۰۵۴۹۰</a>
-      <a href="tel:09206309844" class="contact-item"><i class="fas fa-phone"></i> تماس دوم: ۰۹۲۰۶۳۰۹۸۴۴</a>
-    </div>
+<div id="slider">
+  <img src="images/slide1.jpg" style="opacity:1" alt="slide1">
+  <img src="images/slide2.jpg" alt="slide2">
+  <img src="images/slide3.jpg" alt="slide3">
+</div>
+
+<section class="section">
+  <h2>درباره ما</h2>
+  <p>کلینیک روان‌شناسی آراما با رویکرد تخصصی در حوزه کودک، نوجوان و بزرگسال، خدمات ارزیابی، تشخیص و درمان را با بهره‌گیری از تکنیک‌های نوین و مبتنی بر شواهد علمی ارائه می‌دهد.</p>
+  <img src="images/clinic-team.jpg" alt="team" style="width:80%;border-radius:12px;margin-top:1rem;">
+</section>
+
+<section class="section">
+  <h2>خدمات ما</h2>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
+    <div><img src="images/service1.jpg" alt="service1" style="width:180px;border-radius:8px;"><p>درمان اضطراب و افسردگی</p></div>
+    <div><img src="images/service2.jpg" alt="service2" style="width:180px;border-radius:8px;"><p>مشاوره خانواده و زوج</p></div>
+    <div><img src="images/service3.jpg" alt="service3" style="width:180px;border-radius:8px;"><p>ارزیابی و درمان کودک و نوجوان</p></div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>ارتباط با من</h2>
-  <a href="https://wa.me/989206309844" target="_blank" class="contact-item"><i class="fab fa-whatsapp"></i> ارسال پیام در واتساپ: ۰۹۲۰۶۳۰۹۸۴۴</a>
-  <a href="https://www.instagram.com/mina_golsorkhi.psychologist" target="_blank" class="contact-item"><i class="fab fa-instagram"></i> اینستاگرام: @mina_golsorkhi.psychologist</a>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1619.6455171732524!2d51.411606041695426!3d35.75971485981604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0787e144a141%3A0x89c7929497e64147!2z2qnZiCDbj9in2Lcg2KrYstmI2K_Yp9uM!5e0!3m2!1sen!2sir!4v1703600000000!5m2!1sen!2sir" allowfullscreen="" loading="lazy"></iframe>
-  </div>
+<section class="section contact">
+  <h3>ارتباط با ما</h3>
+  <p><b>📍 آدرس:</b> نرسیده به میدان ونک، خیابان ولیعصر، روبه‌روی دهم گاندی، ساختمان ۷۹۰، واحد ۲۰</p>
+  <p><b>📞 تلفن:</b> ۰۹۳۷۴۴۰۵۴۹۰</p>
+  <p><b>💬 واتساپ:</b> ۰۹۲۰۶۳۰۹۸۴۴</p>
 </section>
-</main>
 
-<a href="tel:09374405490" class="fixed-call-btn"><i class="fas fa-phone-alt"></i> تماس سریع</a>
+<footer>
+  <p>© ۲۰۲۵ تمامی حقوق برای کلینیک روان‌شناسی آراما محفوظ است.</p>
+</footer>
 
-<footer>© 2025 مینا گل‌سرخی - مشاور و روان‌شناس</footer>
+<script>
+const slides = document.querySelectorAll("#slider img");
+let current = 0;
+setInterval(() => {
+  slides[current].style.opacity = "0";
+  current = (current + 1) % slides.length;
+  slides[current].style.opacity = "1";
+}, 4000);
+</script>
+
 </body>
 </html>
